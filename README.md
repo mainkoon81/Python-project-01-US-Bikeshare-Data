@@ -154,8 +154,7 @@ def number_of_trips(filename):
 for i in data_file:
     print(i, number_of_trips(data_file[i]))
 ```
-
-
+<img src="https://user-images.githubusercontent.com/31917400/32452938-ddce98ce-c312-11e7-8ec9-ce6fc4f734e1.jpg" width="300" height="50" />
 
 
 
