@@ -124,7 +124,29 @@ for city, filenames in city_info.items():
 #### *|Data Exploration|*
 - __package:__ matplotlib
 - __func:__ `plt.hist(data, bins = range(,,))`, `plt.title('str: {}'.format(i))`,`plt.xlabel('str')`,`plt.show()`
-- __issue:__  
+- __question:__ Which city has the highest number of trips? Which city has the highest proportion of trips made by subscribers? Which city has the highest proportion of trips made by short-term customers?
+- **[CODE]**
+> **Planning_01.**: 
+ - func_01. number_of_trips(filename) :Define a function that reads in a file with trip data and reports the number of trips made by subscribers, customers, and total overall.
+```
+def number_of_trips(filename):
+    with open(filename, 'r') as f_in:
+        reader = csv.DictReader(f_in)
+        
+        n_subscribers = 0
+        n_customers = 0
+        
+        for row in reader:
+            if row['user_type'] == 'Subscriber':
+                n_subscribers += 1
+            elif row['user_type'] == 'Customer':
+                n_customers += 1
+        n_total = n_subscribers + n_customers
+        
+        return(n_subscribers, n_customers, n_total, n_subscribers/n_total, n_customers/n_total)
+```
+
+
 
 
 
