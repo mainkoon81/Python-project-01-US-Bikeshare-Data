@@ -201,12 +201,13 @@ for i in data_file:
 
 <img src="https://user-images.githubusercontent.com/31917400/32454285-b1b67ff0-c316-11e7-889a-c40dbd90e169.jpg" width="250" height="50" />
 
- - __plotting:__
+ - __##plotting:__
  - question: The output has pulled up an interesting result. While the mean trip time for Subscribers is well under 30 minutes, the mean trip time for Customers is actually above 30 minutes! It will be interesting for us to look at how the trip times are distributed. 
- - func_01. triplist(filename) :Define a function that creates a histogram of the trip times for the city - NYC, Washington, Chicago
- - func_o2. triplist_s(filename) :Define a function that creates a histogram of the trip times for the city (only for Subscribers)
- - func_o3. triplist_c(filename) :Define a function that creates a histogram of the trip times for the city (only for Customers)
- 
+ - func_01. triplist(filename) :Define a function returning a **simple list** (not df) then you create a histogram of the trip times for the city - NYC, Washington, Chicago
+ - func_02. triplist_s(filename) :Define a function returning a **simple list** (not df) then you create a histogram of the trip times for the city (only for Subscribers)
+ - func_03. triplist_c(filename) :Define a function returning a **simple list** (not df) then you create a histogram of the trip times for the city (only for Customers)
+ - The first histogram suggests that there are some highly infrequent outliers in the data. Instead of reprocessing the data, we use additional parameters with the `plt.hist(data, bins= a list?)` to limit the range of data that is plotted. Add limits to the plots so that only trips of duration less than 75 minutes are plotted, and set the plots up so that bars are in five-minute wide intervals. For each group, where is the peak of each distribution? How would you describe the shape of each distribution?
+  
 ```
 def triplist(filename):
     with open(filename, 'r') as f_in:
@@ -220,8 +221,11 @@ for i in data_file:
     plt.title('Distribution of Trip Durations: {}'.format(i))
     plt.xlabel('Duration (m)')
     plt.show()
+```
 
+<img src="https://user-images.githubusercontent.com/31917400/32454285-b1b67ff0-c316-11e7-889a-c40dbd90e169.jpg" width="250" height="50" />
 
+```
 def triplist_s(filename):
     with open(filename, 'r') as f_in:
         reader = csv.DictReader(f_in)
@@ -231,11 +235,15 @@ def triplist_s(filename):
                 ll.append(int(round(float(row['duration'].replace(':','')))))
         return (ll)
 for i in data_file:
-    plt.hist(triplist_s(data_file[i]), bins= range(0, 75, 5)) #bins argument accepts a list! 
+    plt.hist(triplist_s(data_file[i]), bins= range(0, 75, 5)) 
     plt.title('Distribution of Trip Durations: {}'.format(i))
     plt.xlabel('Duration (m) for Subscribers')
     plt.show()
+```
 
+<img src="https://user-images.githubusercontent.com/31917400/32454285-b1b67ff0-c316-11e7-889a-c40dbd90e169.jpg" width="250" height="50" />
+
+```
 def triplist_c(filename):
     with open(filename, 'r') as f_in:
         reader = csv.DictReader(f_in)
@@ -245,11 +253,13 @@ def triplist_c(filename):
                 ll.append(int(round(float(row['duration'].replace(':','')))))
         return (ll)
 for i in data_file:
-    plt.hist(triplist_c(data_file[i]), bins = range(0, 75, 5)) #bins argument accepts a list!
+    plt.hist(triplist_c(data_file[i]), bins = range(0, 75, 5)) 
     plt.title('Distribution of Trip Durations: {}'.format(i))
     plt.xlabel('Duration (m) for Customers')
     plt.show()
 ```
+
+<img src="https://user-images.githubusercontent.com/31917400/32454285-b1b67ff0-c316-11e7-889a-c40dbd90e169.jpg" width="250" height="50" />
 
  
 
