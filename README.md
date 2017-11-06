@@ -181,6 +181,7 @@ for i in data_file:
 <img src="https://user-images.githubusercontent.com/31917400/32453799-2a72df08-c315-11e7-8946-360c2c9eb457.jpg" width="250" height="50" />
  - question: Dig deeper into the question of trip duration based on ridership. Choose one city. Within that city, which type of user takes longer rides on average: Subscribers or Customers?
  - func_01. pivot(filename) :Define a function that reads in a file with trip data and reports the average trip length by Subscribers and Customers.
+ 
 ```
 def pivot(filename):
     with open(filename, 'r') as f_in:
@@ -197,6 +198,7 @@ def pivot(filename):
 for i in data_file:
     print(i, pivot(data_file[i]))        
 ```
+
 <img src="https://user-images.githubusercontent.com/31917400/32454285-b1b67ff0-c316-11e7-889a-c40dbd90e169.jpg" width="250" height="50" />
 
 
