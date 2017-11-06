@@ -50,7 +50,7 @@ example_trips['NYC']['tripduration']
 example_trips['Washington']['user_type']
 example_trips['Chicago']['starttime']
 ```
-<img src="https://user-images.githubusercontent.com/31917400/32441464-c19089ce-c2ef-11e7-889b-ba36141db6e4.jpg" width="250" height="200" />
+<img src="https://user-images.githubusercontent.com/31917400/32451453-ba628d9a-c30e-11e7-8354-5bf0e6351074.jpg" width="250" height="200" />
 <img src="https://user-images.githubusercontent.com/31917400/32441465-c1b7f838-c2ef-11e7-8c77-ce77c904c860.jpg" width="250" height="290" />
 
 > **Planning_02.(Data Condensing)**: It is observable from the above printout that each city provides different information. We want a bundle of functions that generate new data files with the five columns of interest for each trip - 1)trip duration, 2)starting month, starting hour, day of the week, 3)user type - and a single function that produces a final dictionary that consists of the extracted new data files.
