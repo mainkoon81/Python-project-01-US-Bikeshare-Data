@@ -197,7 +197,7 @@ def pivot(filename):
 for i in data_file:
     print(i, pivot(data_file[i]))        
 ```
-<img src="https://user-images.githubusercontent.com/31917400/32453799-2a72df08-c315-11e7-8946-360c2c9eb457.jpg" width="250" height="50" />
+<img src="https://user-images.githubusercontent.com/31917400/32454285-b1b67ff0-c316-11e7-889a-c40dbd90e169.jpg" width="250" height="50" />
 
 
 
