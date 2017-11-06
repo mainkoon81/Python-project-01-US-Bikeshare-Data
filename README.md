@@ -51,7 +51,7 @@ example_trips['Washington']['user_type']
 example_trips['Chicago']['starttime']
 ```
 <img src="https://user-images.githubusercontent.com/31917400/32451453-ba628d9a-c30e-11e7-8354-5bf0e6351074.jpg" width="250" height="200" />
-<img src="https://user-images.githubusercontent.com/31917400/32441465-c1b7f838-c2ef-11e7-8c77-ce77c904c860.jpg" width="250" height="290" />
+<img src="https://user-images.githubusercontent.com/31917400/32451451-b9b56e30-c30e-11e7-92d2-bb606920c73b.jpg" width="250" height="290" />
 
 > **Planning_02.(Data Condensing)**: It is observable from the above printout that each city provides different information. We want a bundle of functions that generate new data files with the five columns of interest for each trip - 1)trip duration, 2)starting month, starting hour, day of the week, 3)user type - and a single function that produces a final dictionary that consists of the extracted new data files.
  - func_01. duration_in_min(datum, city) :Takes as input a "dictionary" containing info about a single trip (datum) and its origin city (city) and returns the trip duration in units of minutes.
