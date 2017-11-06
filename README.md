@@ -152,7 +152,7 @@ def number_of_trips(filename):
 for i in data_file:
     print(i, number_of_trips(data_file[i]))
 ```
-<img src="https://user-images.githubusercontent.com/31917400/32452938-ddce98ce-c312-11e7-8ec9-ce6fc4f734e1.jpg" width="300" height="50" />
+<img src="https://user-images.githubusercontent.com/31917400/32452938-ddce98ce-c312-11e7-8ec9-ce6fc4f734e1.jpg" width="340" height="50" />
 
  - question: Bike-share systems are designed for riders to take short trips. Most of the time, users are allowed to take trips of 30 minutes or less with no additional charges, with overage charges made for trips of longer than that duration. What is the average trip length for each city? What proportion of rides made in each city are longer than 30 minutes?
  - func_01. avg_trip_len(filename) :Define a function that reads in a file with trip data and reports the average trip length and proportion of rides longer than 30 minutes.
