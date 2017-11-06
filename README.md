@@ -119,7 +119,7 @@ for city, filenames in city_info.items():
     condense_data(filenames['in_file'], filenames['out_file'], city) 
     print_first_point(filenames['out_file'])            
 ```
-<img src="https://user-images.githubusercontent.com/31917400/32448619-5084d146-c307-11e7-80e3-f58778900775.jpg" width="160" height="190" />
+<img src="https://user-images.githubusercontent.com/31917400/32451452-b9e56090-c30e-11e7-8e16-567c67da568f.jpg" width="160" height="190" />
 
 #### *|Data Exploration|*
 - __package:__ matplotlib
