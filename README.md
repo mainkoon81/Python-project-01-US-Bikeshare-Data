@@ -261,6 +261,18 @@ for i in data_file:
 
 <img src="https://user-images.githubusercontent.com/31917400/32454285-b1b67ff0-c316-11e7-889a-c40dbd90e169.jpg" width="250" height="50" />
 
+ - __##Further exploration:__
+We have compared the relative volume of trips made between three U.S. cities and the ratio of trips made by Subscribers and Customers. For each city, we have investigated differences between Subscribers and Customers in terms of how long a typical trip lasts. We can still continue the exploration in several directions. For example:
+   - How does ridership differ by month or season? 
+   - Which month / season has the highest ridership? 
+   - Does the ratio of Subscriber trips to Customer trips change depending on the month or season?
+   - Is the pattern of ridership different on the weekends versus weekdays? 
+   - On what days are Subscribers most likely to use the system? 
+   - What about Customers? Does the average duration of rides change depending on the day of the week?
+   - During what time of day is the system used the most? 
+   - Is there a difference in usage patterns for Subscribers and Customers?
+
+
  
 
 
