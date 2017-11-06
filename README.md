@@ -126,9 +126,15 @@ for city, filenames in city_info.items():
 - __func:__ `plt.hist(data, bins = range(,,))`, `plt.title('str: {}'.format(i))`,`plt.xlabel('str')`,`plt.show()`
 - __question:__ Which city has the highest number of trips? Which city has the highest proportion of trips made by subscribers? Which city has the highest proportion of trips made by short-term customers?
 - **[CODE]**
-> **Planning_01.**: 
+> **Planning_01.** 
  - func_01. number_of_trips(filename) :Define a function that reads in a file with trip data and reports the number of trips made by subscribers, customers, and total overall.
+ 
+ 
 ```
+data_file= {'Washington': 'C:/Users/Minkun/Desktop/classes_1/NanoDeg/1.Data_AN/L2/bike-share-analysis/data/Washington-2016-Summary.csv',
+            'Chicago': 'C:/Users/Minkun/Desktop/classes_1/NanoDeg/1.Data_AN/L2/bike-share-analysis/data/Chicago-2016-Summary.csv',
+            'NYC': 'C:/Users/Minkun/Desktop/classes_1/NanoDeg/1.Data_AN/L2/bike-share-analysis/data/NYC-2016-Summary.csv'}
+
 def number_of_trips(filename):
     with open(filename, 'r') as f_in:
         reader = csv.DictReader(f_in)
@@ -144,6 +150,9 @@ def number_of_trips(filename):
         n_total = n_subscribers + n_customers
         
         return(n_subscribers, n_customers, n_total, n_subscribers/n_total, n_customers/n_total)
+
+for i in data_file:
+    print(i, number_of_trips(data_file[i]))
 ```
 
 
