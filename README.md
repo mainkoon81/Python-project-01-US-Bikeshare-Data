@@ -201,12 +201,51 @@ for i in data_file:
 
 <img src="https://user-images.githubusercontent.com/31917400/32454285-b1b67ff0-c316-11e7-889a-c40dbd90e169.jpg" width="250" height="50" />
 
+ - plotting:
+ 
+```
+def triplist(filename):
+    with open(filename, 'r') as f_in:
+        reader = csv.DictReader(f_in)
+        ll = []
+        for row in reader:
+            ll.append(int(round(float(row['duration'].replace(':','')))))
+        return (ll)
+for i in data_file:
+    plt.hist(triplist(data_file[i]))
+    plt.title('Distribution of Trip Durations: {}'.format(i))
+    plt.xlabel('Duration (m)')
+    plt.show()
 
 
+def triplist_s(filename):
+    with open(filename, 'r') as f_in:
+        reader = csv.DictReader(f_in)
+        ll = []
+        for row in reader:
+            if row['user_type']=='Subscriber':
+                ll.append(int(round(float(row['duration'].replace(':','')))))
+        return (ll)
+for i in data_file:
+    plt.hist(triplist_s(data_file[i]), bins= range(0, 75, 5)) #bins argument accepts a list! 
+    plt.title('Distribution of Trip Durations: {}'.format(i))
+    plt.xlabel('Duration (m) for Subscribers')
+    plt.show()
 
-
-
-
+def triplist_c(filename):
+    with open(filename, 'r') as f_in:
+        reader = csv.DictReader(f_in)
+        ll = []
+        for row in reader:
+            if row['user_type']=='Customer':
+                ll.append(int(round(float(row['duration'].replace(':','')))))
+        return (ll)
+for i in data_file:
+    plt.hist(triplist_c(data_file[i]), bins = range(0, 75, 5)) #bins argument accepts a list!
+    plt.title('Distribution of Trip Durations: {}'.format(i))
+    plt.xlabel('Duration (m) for Customers')
+    plt.show()
+```
 
 
 
