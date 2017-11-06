@@ -201,7 +201,11 @@ for i in data_file:
 
 <img src="https://user-images.githubusercontent.com/31917400/32454285-b1b67ff0-c316-11e7-889a-c40dbd90e169.jpg" width="250" height="50" />
 
- - plotting:
+ - __plotting:__
+ - question: The output has pulled up an interesting result. While the mean trip time for Subscribers is well under 30 minutes, the mean trip time for Customers is actually above 30 minutes! It will be interesting for us to look at how the trip times are distributed. 
+ - func_01. triplist(filename) :Define a function that creates a histogram of the trip times for the city - NYC, Washington, Chicago
+ - func_o2. triplist_s(filename) :Define a function that creates a histogram of the trip times for the city (only for Subscribers)
+ - func_o3. triplist_c(filename) :Define a function that creates a histogram of the trip times for the city (only for Customers)
  
 ```
 def triplist(filename):
@@ -247,7 +251,10 @@ for i in data_file:
     plt.show()
 ```
 
+ 
 
+
+ 
 
 
 
