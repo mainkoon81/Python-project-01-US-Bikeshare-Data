@@ -206,8 +206,9 @@ for i in data_file:
  - func_01. triplist(filename) :Define a function returning a **simple list** (not df) then you create a histogram of the trip times for the city - NYC, Washington, Chicago
  - func_02. triplist_s(filename) :Define a function returning a **simple list** (not df) then you create a histogram of the trip times for the city (only for Subscribers)
  - func_03. triplist_c(filename) :Define a function returning a **simple list** (not df) then you create a histogram of the trip times for the city (only for Customers)
- - The first histogram suggests that there are some highly infrequent outliers in the data. Instead of reprocessing the data, we use additional parameters with the `plt.hist(data, bins= a list?)` to limit the range of data that is plotted. Add limits to the plots so that only trips of duration less than 75 minutes are plotted, and set the plots up so that bars are in five-minute wide intervals. For each group, where is the peak of each distribution? How would you describe the shape of each distribution?
-  
+
+
+- The first histogram suggests that there are some highly infrequent outliers in the data. Instead of reprocessing the data, we use additional parameters with the `plt.hist(data, bins= a list?)` to limit the range of data that is plotted.
 ```
 def triplist(filename):
     with open(filename, 'r') as f_in:
@@ -225,6 +226,8 @@ for i in data_file:
 
 <img src="https://user-images.githubusercontent.com/31917400/32624092-1e8f23fa-c580-11e7-9389-0134e7f2b467.jpg" width="600" height="150" />
 
+
+- Using `plt.hist(data, bins= a list?)`, add limits to the plots so that only trips of duration less than 75 minutes are plotted, and set the plots up so that bars are in five-minute wide intervals. 
 ```
 def triplist_s(filename):
     with open(filename, 'r') as f_in:
