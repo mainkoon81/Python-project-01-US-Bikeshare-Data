@@ -201,7 +201,7 @@ for i in data_file:
 
 <img src="https://user-images.githubusercontent.com/31917400/32454285-b1b67ff0-c316-11e7-889a-c40dbd90e169.jpg" width="250" height="50" />
 
- - __##plotting:__
+ - __##plotting##__
  - question: The output has pulled up an interesting result. While the mean trip time for Subscribers is well under 30 minutes, the mean trip time for Customers is actually above 30 minutes! It will be interesting for us to look at how the trip times are distributed. 
  - func_01. triplist(filename) :Define a function returning a **simple list** (not df) then you create a histogram of the trip times for the city - NYC, Washington, Chicago
  - func_02. triplist_s(filename) :Define a function returning a **simple list** (not df) then you create a histogram of the trip times for the city (only for Subscribers)
@@ -223,7 +223,7 @@ for i in data_file:
     plt.show()
 ```
 
-<img src="https://user-images.githubusercontent.com/31917400/32454285-b1b67ff0-c316-11e7-889a-c40dbd90e169.jpg" width="250" height="50" />
+<img src="https://user-images.githubusercontent.com/31917400/32624092-1e8f23fa-c580-11e7-9389-0134e7f2b467.jpg" width="600" height="150" />
 
 ```
 def triplist_s(filename):
@@ -241,7 +241,7 @@ for i in data_file:
     plt.show()
 ```
 
-<img src="https://user-images.githubusercontent.com/31917400/32454285-b1b67ff0-c316-11e7-889a-c40dbd90e169.jpg" width="250" height="50" />
+<img src="https://user-images.githubusercontent.com/31917400/32624102-238c29ac-c580-11e7-9317-ec4f5aff18b4.jpg" width="600" height="150" />
 
 ```
 def triplist_c(filename):
@@ -259,7 +259,7 @@ for i in data_file:
     plt.show()
 ```
 
-<img src="https://user-images.githubusercontent.com/31917400/32454285-b1b67ff0-c316-11e7-889a-c40dbd90e169.jpg" width="250" height="50" />
+<img src="https://user-images.githubusercontent.com/31917400/32624110-2789f71e-c580-11e7-9a43-a64cab12e517.jpg" width="600" height="150" />
 
  - __##Further exploration:__
 We have compared the relative volume of trips made between three U.S. cities and the ratio of trips made by Subscribers and Customers. For each city, we have investigated differences between Subscribers and Customers in terms of how long a typical trip lasts. We can still continue the exploration in several directions. For example:
