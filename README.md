@@ -14,7 +14,7 @@ __Investigation:__ Any differences within each system by those users that are re
 - __package:__ csv, datetime, pprint
 - __func:__ `datetime.date()`, `csv.DictReader()`, `csv.DictWriter()`, `.next()`, `.whiteheader()`, `.whiterow()`, `.strftime(%A)`, `.replace(':','')`
 - __issue:__ We obtain 3 csv files, but (a)The size of each dataset is too huge to get to the intuitive exploration.(b)There are inconsistencies. Each file has a different way of delivering its data. Even where the information is the same, the column names and formats are sometimes different (Chicago updates with new data twice a year, Washington DC is quarterly, and New York City is monthly). 
-- __approach:__ (a)Using DictReader object, starting off by looking at one entry from each of the dataset.(b)Making sure that the data formats across the cities are consistent, and trimming focusing only on the parts of the data we are most interested in - **1)trip duration, 2)starting month, 3)starting hour, 4)day of the week, and 5)user type.** 
+- __approach:__ (a)Using DictReader object, starting off by looking at one row from each of the dataset.(b)Making sure that the data formats across the cities are consistent, and trimming focusing only on the parts of the data we are most interested in - **1)trip duration, 2)starting month, 3)starting hour, 4)day of the week, and 5)user type.** 
 - __columns to extract from :__ 
   - **Duration:**  Given to us in seconds (New York, Chicago) or milliseconds (Washington). Need to be given in terms of minutes. 
   - **Month, Hour, Day of Week:**  Ridership volume is likely to change based on the season, time of day, and whether it is a weekday or weekend. We use the start time of the trip to obtain these values. The New York City data includes the seconds in their timestamps, while Washington and Chicago do not. 
@@ -264,21 +264,7 @@ for i in data_file:
 
  - __##Further exploration:__
 We have compared the relative volume of trips made between three U.S. cities and the ratio of trips made by Subscribers and Customers. For each city, we have investigated differences between Subscribers and Customers in terms of how long a typical trip lasts. We can still continue the exploration in several directions. For example:
-   - How does ridership differ by month or season? 
-   - Which month / season has the highest ridership? 
-   - Does the ratio of Subscriber trips to Customer trips change depending on the month or season?
-   - Is the pattern of ridership different on the weekends versus weekdays? 
-   - On what days are Subscribers most likely to use the system? 
-   - What about Customers? Does the average duration of rides change depending on the day of the week?
-   - During what time of day is the system used the most? 
-   - Is there a difference in usage patterns for Subscribers and Customers?
-
-
- 
-
-
- 
-
-
-
+   - How does ridership differ by month or season? Which month / season has the highest ridership? Does the ratio of Subscriber trips to Customer trips change depending on the month or season?
+   - **Is the pattern of ridership different on the weekends versus weekdays? On what days are Subscribers most likely to use the system? What about Customers? Does the average duration of rides change depending on the day of the week?**
+   - During what time of day is the system used the most? Is there a difference in usage patterns for Subscribers and Customers?
 
