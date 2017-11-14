@@ -270,8 +270,9 @@ We have compared the relative volume of trips made between three U.S. cities and
 
 - **[CODE]**
 
-> **Planning.(Data Condensing)**: We should recollect the necessary columns and reproduce 3 summary files. First, We want a function that generate new summary files with the three columns of interest for each trip - 1)day of the week, 2)duration, 3)user type - and a single condensing function that produces a final dictionary that consists of 7 classes of 'day_of_week' 
+> **Planning**: We should recollect the necessary columns and reproduce 3 summary files. First, We want a function that generate new summary files with the three columns of interest for each trip - 1)day of the week, 2)duration, 3)user type - and a single condensing function that produces a final dictionary that consists of 7 classes of 'day_of_week' 
 
+##[Data-Condensing]##
  - func_01. dur(datum, city) :Takes as input a "dictionary" containing info about a single trip (datum) and its origin city (city) and returns the trip duration in units of minutes.
  - func_02. day(datum, city) :Takes as input a dictionary containing info about a single trip (datum) and its origin city (city) and returns the month, hour, and day of the week in which the trip was made.
  - func_03. user(datum, city) :Takes as input a "dictionary" containing info about a single trip (datum) and its origin city (city) and returns the type of system user that made the trip.
@@ -330,6 +331,98 @@ for k, v in city_info.items():
     condense_data_2(v['in_file'], v['out_file'], k)
 ```
 
+##[Data-Exploring]##
+### Here, our analysis begins in earnest, buckling down to it! Now the filename is our 'new summary' files! 
+ - func_01. day_trips_2_s(filename) :Takes as input a dictionary, based on user_type(Subscriber), print the total duration by day_of_week.
+ - func_02. day_trips_2_c(filename) ::Takes as input a dictionary, based on user_type(Customer), print the total duration by day_of_week.
+ 
+```
+#For Subscriber
+def day_trips_2_s(filename):
+    with open(filename, 'r') as f_in:
+        reader = csv.DictReader(f_in)
+        M = []
+        T = []
+        W = []
+        TH = []
+        F = []
+        SA = []
+        SN = []
+        
+        for row in reader:
+            if row['user_type']=='Subscriber':
+                if row['day_of_week']=='Monday':
+                    M.append(int(round(float(row['duration'].replace(':','')))))
+                elif row['day_of_week']=='Tuesday':
+                    T.append(int(round(float(row['duration'].replace(':','')))))
+                elif row['day_of_week']=='Wednesday':
+                    W.append(int(round(float(row['duration'].replace(':','')))))
+                elif row['day_of_week']=='Thursday':
+                    TH.append(int(round(float(row['duration'].replace(':','')))))
+                elif row['day_of_week']=='Friday':
+                    F.append(int(round(float(row['duration'].replace(':','')))))
+                elif row['day_of_week']=='Saturday':
+                    SA.append(int(round(float(row['duration'].replace(':','')))))
+                elif row['day_of_week']=='Sunday':
+                    SN.append(int(round(float(row['duration'].replace(':','')))))
+        return (sum(M), sum(T), sum(W), sum(TH), sum(F), sum(SA), sum(SN))
 
+    
+#For Customer
+def day_trips_2_c(filename):
+    with open(filename, 'r') as f_in:
+        reader = csv.DictReader(f_in)
+        M = []
+        T = []
+        W = []
+        TH = []
+        F = []
+        SA = []
+        SN = []
+        
+        for row in reader:
+            if row['user_type']=='Customer':
+                if row['day_of_week']=='Monday':
+                    M.append(int(round(float(row['duration'].replace(':','')))))
+                elif row['day_of_week']=='Tuesday':
+                    T.append(int(round(float(row['duration'].replace(':','')))))
+                elif row['day_of_week']=='Wednesday':
+                    W.append(int(round(float(row['duration'].replace(':','')))))
+                elif row['day_of_week']=='Thursday':
+                    TH.append(int(round(float(row['duration'].replace(':','')))))
+                elif row['day_of_week']=='Friday':
+                    F.append(int(round(float(row['duration'].replace(':','')))))
+                elif row['day_of_week']=='Saturday':
+                    SA.append(int(round(float(row['duration'].replace(':','')))))
+                elif row['day_of_week']=='Sunday':
+                    SN.append(int(round(float(row['duration'].replace(':','')))))
+        return (sum(M), sum(T), sum(W), sum(TH), sum(F), sum(SA), sum(SN))  
+```
 
+##[Plotting]##
+
+```
+data_file= {'Washington': 'C:/Users/Minkun/Desktop/classes_1/NanoDeg/1.Data_AN/L2/bike-share-analysis/data/Washington-2016-Summary.csv',
+            'Chicago': 'C:/Users/Minkun/Desktop/classes_1/NanoDeg/1.Data_AN/L2/bike-share-analysis/data/Chicago-2016-Summary.csv',
+            'NYC': 'C:/Users/Minkun/Desktop/classes_1/NanoDeg/1.Data_AN/L2/bike-share-analysis/data/NYC-2016-Summary.csv'}
+
+for i in data_file:
+    data = day_trips_2_s(data_file[i])
+    labels = ['M', 'T', 'W', 'TH', 'F', 'SA', 'SN']
+    plt.bar(range(len(data)), data, align='center') # x is a range..y is the data...
+    plt.ylim(ymax = 600000)
+    plt.xticks(range(len(data)), labels, rotation='vertical')
+    plt.title('Trip Durations for Subscribers: {}'.format(i))
+    plt.show()
+    
+    data2 = day_trips_2_c(data_file[i])
+    labels = ['M', 'T', 'W', 'TH', 'F', 'SA', 'SN']
+    plt.bar(range(len(data)), data2, align='center') # x is a range..y is the data...
+    plt.ylim(ymax = 600000)
+    plt.xticks(range(len(data)), labels, rotation='vertical')
+    plt.title('Trip Durations for Customers: {}'.format(i))
+    plt.show()
+```
+
+<img src="https://user-images.githubusercontent.com/31917400/32624110-2789f71e-c580-11e7-9a43-a64cab12e517.jpg" />
 
