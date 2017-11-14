@@ -332,7 +332,7 @@ for k, v in city_info.items():
 ```
 
 ##[Data-Exploring]##
-### Here, our analysis begins in earnest, buckling down to it! Now the filename is our 'new summary' files! 
+#### Here, our analysis begins in earnest, buckling down to it! Now the filename is for our 'new summary' files! 
  - func_01. day_trips_2_s(filename) :Takes as input a dictionary, based on user_type(Subscriber), print the total duration by day_of_week.
  - func_02. day_trips_2_c(filename) ::Takes as input a dictionary, based on user_type(Customer), print the total duration by day_of_week.
  
