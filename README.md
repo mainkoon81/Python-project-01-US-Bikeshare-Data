@@ -424,5 +424,5 @@ for i in data_file:
     plt.show()
 ```
 
-<img src="https://user-images.githubusercontent.com/31917400/32624110-2789f71e-c580-11e7-9a43-a64cab12e517.jpg" />
+<img src="https://user-images.githubusercontent.com/31917400/32787062-86d545ea-c94d-11e7-9a68-d6267acf1e48.jpg" />
 
