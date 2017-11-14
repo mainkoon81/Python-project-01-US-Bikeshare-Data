@@ -269,22 +269,66 @@ We have compared the relative volume of trips made between three U.S. cities and
    - During what time of day is the system used the most? Is there a difference in usage patterns for Subscribers and Customers?
 
 - **[CODE]**
-> **Planning_01.(Full Data Collecting)**: Define a function that prints the name of the city and returns(extracts) the 'full data points' from the large csv files (DictReader object) that includes a 'header row'. It prints the city names and all data points so that the entire trips are parsed in the form of a dictionary. And it also returns those values to use when we create a 'dictionary-nesting dictionary' later on....which is important because it's a provided data file to iterate through later.
+
+> **Planning.(Data Condensing)**: We should recollect the necessary columns and reproduce 3 summary files. First, We want a function that generate new summary files with the three columns of interest for each trip - 1)day of the week, 2)duration, 3)user type - and a single condensing function that produces a final dictionary that consists of 7 classes of 'day_of_week' 
+
+ - func_01. dur(datum, city) :Takes as input a "dictionary" containing info about a single trip (datum) and its origin city (city) and returns the trip duration in units of minutes.
+ - func_02. day(datum, city) :Takes as input a dictionary containing info about a single trip (datum) and its origin city (city) and returns the month, hour, and day of the week in which the trip was made.
+ - func_03. user(datum, city) :Takes as input a "dictionary" containing info about a single trip (datum) and its origin city (city) and returns the type of system user that made the trip.
 
 ```
+def dur(datum, city):
+    if city=='Washington':
+        dura_value = float(datum['Duration (ms)'])/60000
+    else: 
+        dura_value = float(datum['tripduration'])/60
+    return(dura_value)
 
+def day(datum, city):
+    if city=='Washington': 
+        month,day,year = (int(x.replace(':','')) for x in datum['Start date'].split()[0].split('/')) 
+        ans = datetime.date(year, month, day) #creating a datetime-object! [*in: int, *out: int] ==> "datetime.date(2016, 1, 1)"
+        day_of_week = ans.strftime('%A') #calculating, using 'year,month,day'
+    else:
+        month,day,year = (int(x.replace(':','')) for x in datum['starttime'].split()[0].split('/'))
+        ans = datetime.date(year, month, day)
+        day_of_week = ans.strftime('%A')        
+    return(day_of_week)
 
+def user(datum, city):
+    if city == 'Washington':
+        if datum['Member Type']=='Registered':
+            user_type = 'Subscriber'
+        else:
+            user_type = 'Customer'
+    else:
+        user_type = datum['usertype']
+    return(user_type)
+
+def condense_data_2(in_file, out_file, city): 
+    with open(out_file, 'w') as f_out, open(in_file, 'r') as f_in:
+        trip_writer = csv.DictWriter(f_out, fieldnames = ['duration', 'day_of_week', 'user_type'])
+        trip_writer.writeheader()
+        trip_reader = csv.DictReader(f_in)
+
+        for row in trip_reader:
+            new_point = {}
+            new_point['duration'] = dur(row, city)
+            new_point['day_of_week'] = day(row, city)
+            new_point['user_type'] = user(row, city)
+             
+            trip_writer.writerow(new_point)
+
+city_info = {'Washington': {'in_file': 'C:/Users/Minkun/Desktop/classes_1/NanoDeg/1.Data_AN/L2/bike-share-analysis/data/Washington-CapitalBikeshare-2016.csv',
+                            'out_file': 'C:/Users/Minkun/Desktop/classes_1/NanoDeg/1.Data_AN/L2/bike-share-analysis/data/Washington-2016-Summary.csv'},
+             'Chicago': {'in_file': 'C:/Users/Minkun/Desktop/classes_1/NanoDeg/1.Data_AN/L2/bike-share-analysis/data/Chicago-Divvy-2016.csv',
+                         'out_file': 'C:/Users/Minkun/Desktop/classes_1/NanoDeg/1.Data_AN/L2/bike-share-analysis/data/Chicago-2016-Summary.csv'},
+             'NYC': {'in_file': 'C:/Users/Minkun/Desktop/classes_1/NanoDeg/1.Data_AN/L2/bike-share-analysis/data/NYC-CitiBike-2016.csv',
+                     'out_file': 'C:/Users/Minkun/Desktop/classes_1/NanoDeg/1.Data_AN/L2/bike-share-analysis/data/NYC-2016-Summary.csv'}}
+
+for k, v in city_info.items():
+    condense_data_2(v['in_file'], v['out_file'], k)
 ```
-
-<output>
-
-
-> **Planning_02.(Data Condensing)**: It is observable from the above printout that each city provides different information. First, We want a function that generate new data files with the three columns of interest for each trip - 1)day of the week, 2)duration, 3)user type - and a single condensing function that produces a final dictionary that consists of 7 keys of 'day_of_week' 
-
- - func_01. duration_in_min(datum, city) :Takes as input a "dictionary" containing info about a single trip (datum) and its origin city (city) and returns the trip duration in units of minutes.
- - func_02. time_of_trip(datum, city) :Takes as input a dictionary containing info about a single trip (datum) and its origin city (city) and returns the month, hour, and day of the week in which the trip was made.
- - func_03. type_of_user(datum, city) :Takes as input a "dictionary" containing info about a single trip (datum) and its origin city (city) and returns the type of system user that made the trip.
-
 
 
 
