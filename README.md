@@ -12,7 +12,7 @@ __Investigation:__ Any differences within each system by those users that are re
 
 #### *|Data Wrangling|*
 - __package:__ csv, datetime, pprint
-- __func:__ `datetime.date()`, `csv.DictReader()`, `csv.DictWriter()`, `.next()`, `.whiteheader()`, `.whiterow()`, `.strftime(%A)`, `.replace(':','')`
+- __func:__ `datetime.date()`, `csv.DictReader()`, `csv.DictWriter()`, `.next()`, `.list()`, `.whiteheader()`, `.whiterow()`, `.strftime(%A)`, `.replace(':','')`
 - __issue:__ We obtain 3 csv files, but (a)The size of each dataset is too huge to get to the intuitive exploration.(b)There are inconsistencies. Each file has a different way of delivering its data. Even where the information is the same, the column names and formats are sometimes different (Chicago updates with new data twice a year, Washington DC is quarterly, and New York City is monthly). 
 - __approach:__ (a)Using DictReader object, starting off by looking at one row from each of the dataset.(b)Making sure that the data formats across the cities are consistent, and trimming focusing only on the parts of the data we are most interested in - **1)trip duration, 2)starting month, 3)starting hour, 4)day of the week, and 5)user type.** 
 - __columns to extract from :__ 
