@@ -53,7 +53,7 @@ example_trips['Chicago']['starttime']
 <img src="https://user-images.githubusercontent.com/31917400/32451453-ba628d9a-c30e-11e7-8354-5bf0e6351074.jpg" width="250" height="200" />
 <img src="https://user-images.githubusercontent.com/31917400/32451451-b9b56e30-c30e-11e7-92d2-bb606920c73b.jpg" width="250" height="290" />
 
-> **Planning_02.(Data Condensing)**: It is observable from the above printout that each city provides different information. We want a bundle of functions that generate new data files with the five columns of interest for each trip - 1)trip duration, 2)starting month, starting hour, day of the week, 3)user type - and a single function that produces a final dictionary that consists of the extracted new data files.
+> **Planning_02.(Data Condensing)**: It is observable from the above printout that each city provides different information. We want a bundle of functions that generate new data files with the five columns of interest for each trip - 1)trip duration, 2)starting month, starting hour, day of the week, 3)user type - and a single condensing function that produces a final dictionary that consists of the extracted new data files.
  - func_01. duration_in_min(datum, city) :Takes as input a "dictionary" containing info about a single trip (datum) and its origin city (city) and returns the trip duration in units of minutes.
  - func_02. time_of_trip(datum, city) :Takes as input a dictionary containing info about a single trip (datum) and its origin city (city) and returns the month, hour, and day of the week in which the trip was made.
  - func_03. type_of_user(datum, city) :Takes as input a "dictionary" containing info about a single trip (datum) and its origin city (city) and returns the type of system user that made the trip.
@@ -267,4 +267,25 @@ We have compared the relative volume of trips made between three U.S. cities and
    - How does ridership differ by month or season? Which month / season has the highest ridership? Does the ratio of Subscriber trips to Customer trips change depending on the month or season?
    - **Is the pattern of ridership different on the weekends versus weekdays? On what days are Subscribers most likely to use the system? What about Customers? Does the average duration of rides change depending on the day of the week?**
    - During what time of day is the system used the most? Is there a difference in usage patterns for Subscribers and Customers?
+
+- **[CODE]**
+> **Planning_01.(Full Data Collecting)**: Define a function that prints the name of the city and returns(extracts) the 'full data points' from the large csv files (DictReader object) that includes a 'header row'. It prints the city names and all data points so that the entire trips are parsed in the form of a dictionary. And it also returns those values to use when we create a 'dictionary-nesting dictionary' later on....which is important because it's a provided data file to iterate through later.
+
+```
+
+
+```
+
+<output>
+
+
+> **Planning_02.(Data Condensing)**: It is observable from the above printout that each city provides different information. First, We want a function that generate new data files with the three columns of interest for each trip - 1)day of the week, 2)duration, 3)user type - and a single condensing function that produces a final dictionary that consists of 7 keys of 'day_of_week' 
+
+ - func_01. duration_in_min(datum, city) :Takes as input a "dictionary" containing info about a single trip (datum) and its origin city (city) and returns the trip duration in units of minutes.
+ - func_02. time_of_trip(datum, city) :Takes as input a dictionary containing info about a single trip (datum) and its origin city (city) and returns the month, hour, and day of the week in which the trip was made.
+ - func_03. type_of_user(datum, city) :Takes as input a "dictionary" containing info about a single trip (datum) and its origin city (city) and returns the type of system user that made the trip.
+
+
+
+
 
