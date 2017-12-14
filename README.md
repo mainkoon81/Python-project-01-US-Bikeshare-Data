@@ -1,7 +1,10 @@
-# Python-project-00-US-Bikeshare-Data
+# project-00-US-Bikeshare-Data
 
+__Case-00.__ US Bikeshare Data
+  - package: 
+  - func:
 ----------------------------------------------------------------------
-__Data:__ US Bikeshare data (https://www.motivateco.com/use-our-data/)
+__Data:__ US Bikeshare Data (https://www.motivateco.com/use-our-data/)
 
 __Story:__ Comparing the system usage between three large cities: New York City, Chicago, and Washington, DC. What kinds of information would we want to know about in order to make smarter business decisions? If we were a user of the bike-share service, what factors might influence how we would want to use the service? 
 
