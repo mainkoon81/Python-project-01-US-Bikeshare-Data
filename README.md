@@ -1,6 +1,5 @@
-# Python-project-01-US-Bikeshare-Data
+# Python-project-00-US-Bikeshare-Data
 
-## Multivariate Data Analysis / Machine Learning Playground with Python
 ----------------------------------------------------------------------
 __Data:__ US Bikeshare data (https://www.motivateco.com/use-our-data/)
 
