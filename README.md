@@ -1,4 +1,4 @@
-# project-00-US-Bikeshare-Data
+# 00-US-Bikeshare-Data
 
 __Case-00.__ US Bikeshare Data
   - package: 
